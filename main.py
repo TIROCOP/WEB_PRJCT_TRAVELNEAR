@@ -1,30 +1,57 @@
 import folium
-from jinja2 import Template
-from folium.map import Marker
 
-# Modify Marker template to include the onClick event
-click_template = """{% macro script(this, kwargs) %}
-    var {{ this.get_name() }} = L.marker(
-        {{ this.location|tojson }},
-        {{ this.options|tojson }}
-    ).addTo({{ this._parent.get_name() }}).on('click', onClick);
-{% endmacro %}"""
+from flask import Flask, url_for, render_template
+from htmlmerger import HtmlMerger
+import codecs
 
-# Change template to custom template
-Marker._template = Template(click_template)
+#
+sp = [[55.689179, 37.772682],
+      [55.690211, 37.784942],
+      [55.687925, 37.801329],
+      [55.687321, 37.804719],
+      [55.681030, 37.817131],
+      [55.680892, 37.823656],
+      [55.681641, 37.828270],
+      [55.670039, 37.827013],
+      [55.662859, 37.809713]]
 
-location_center = [51.7678, -0.00675564]
-m = folium.Map(location_center, zoom_start=13)
 
-# Create the onClick listener function as a branca element and add to the map html
-click_js = """function onClick(e) {
-                 var point = e.latlng; alert(point)
-                 }"""
+lit = []
+#
+app = Flask(__name__)
 
-e = folium.Element(click_js)
-html = m.get_root()
-html.script.get_root().render()
-html.script._children[e.get_name()] = e
 
-# Add marker (click on map an alert will display with latlng values)
-marker = folium.Marker([51.7678, -0.00675564]).add_to(m)
+@app.route('/')
+def main():
+    map = folium.Map(position='relative', left='30%', width='70%', height='100%', align='right', location=[55.689179, 37.772682], zoom_start=12)
+    folium.PolyLine(sp,
+                    color='gray',
+                    weight=5,
+                    opacity=0.8).add_to(map)
+    for k in sp:
+        folium.Marker(
+            k, popup=f"<i>0_0</i>"
+        ).add_to(map)
+    f = codecs.open("templates/copybase.html", 'r', encoding='UTF-8')
+    map.get_root().html.add_child(folium.Element(f.read()))
+    map.save('templates/map.html')
+    return render_template('map.html')
+
+
+@app.route('/make')
+def make():
+    map1 = folium.Map(location=[55.689179, 37.772682], zoom_start=12)
+    pop = folium.LatLngPopup()
+
+    map1.add_child(pop)
+    map1.save('templates/every_htm.html')
+    merger = HtmlMerger(input_directory="templtes/stat")
+    merger.files.append('stat.html')
+    merger.files.append('base.html')
+    merger.merge(clean=False)
+
+    return render_template('every_htm.html')
+
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.2')

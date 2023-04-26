@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+::-webkit-scrollbar { display: none }
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: "Noto Sans";
+	font-weight: 600;
+	color: #2c2c2c;
+}
+
+/* TEMPORARY EXAMPLE */
+body {
+	background-image: url(./assets/background.png);
+	background-size: cover;
+}
+/* TEMPORARY EXAMPLE */
+
+.leaflet-pane leaflet-overlay-pane {
+    position= relative;
+
+}
+
+
+.panel {
+    position: absolute;
+	width: 512px;
+	max-height: 90%;
+	min-height: 512px;
+	background: #fff;
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	left: 40px;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	border-radius: 12px;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.2);
+	overflow: hidden scroll;
+}
+
+.panel .header {
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	height: 280px;
+	min-height: 280px;
+	align-items: end;
+}
+
+.panel .header .title {
+	padding: 60px 0 0 24px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 64px;
+	font-size: 32px;
+	font-weight: 900;
+	line-height: 48px;
+	background: linear-gradient(to bottom, transparent 0%, #ffffffbd 70%, #fff 95%);
+	transition: opacity .25s ease-out;
+	pointer-events: none;
+	user-select: none;
+	margin-bottom: -4px;
+	color: #1e1e1e;
+}
+
+.panel .header:hover .title {
+	opacity: 0%;
+	transition: opacity .5s .25s;
+}
+
+.panel .description {
+	font-size: 16px;
+	margin: 24px 0;
+}
+
+.panel .content {
+	padding: 0 24px;
+}
+
+.panel .param {
+	margin-bottom: 8px;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 256px;
+}
+
+.panel .param .name {
+	text-transform: uppercase;
+	font-weight: 800;
+	margin-bottom: 4px;
+	flex: 1;
+}
+
+.panel .param .value {
+	line-height: 24px;
+}
+
+.reviews {
+	padding: 24px;
+	border-radius: 16px;
+}
+
+.reviews .title {
+	font-weight: 800;
+	font-size: 24px;
+	margin: 12px 0 24px;
+	color: #1e1e1e;
+}
+
+.reviews .comment {
+	margin-bottom: 24px;
+}
+
+.reviews .author {
+	display: flex;
+	align-items: center;
+}
+
+.reviews .author .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-right: 12px;
+}
+
+.reviews .author .username {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.reviews .text {
+	margin-top: 8px;
+}
+
+.review-input {
+	position: sticky;
+	bottom: 0;
+	padding: 0 24px 24px;
+	box-sizing: border-box;
+	width: 100%;
+	background: linear-gradient(transparent, #fff 35%);
+}
+
+.review-input input {
+	appearance: unset;
+	border: 0;
+	font-size: 18px;
+	background: #dedede;
+	padding: 12px 16px;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 8px;
+	outline: none;
+}

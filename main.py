@@ -63,6 +63,7 @@ def firstpage(title):  # первая страница страница (соз�
 
 @app.route('/find')
 def find():  # поиск пути по критериям
+
     return render_template('finder.html')
 
 
@@ -92,11 +93,18 @@ def open_map():
     return render_template('map.html')
 
 
+def update():
+    global d
+    d = []
+
+
 d = []
 
 
 @app.route('/make_map/<kords>')
 def make_map(kords):
+    if kords == '55.8006,37.6684':
+        update()
     map1 = folium.Map(location=[55.7522, 37.6156], left='30%', zoom_start=12)
     pop = LatLngPopup()
     map1.add_child(pop)

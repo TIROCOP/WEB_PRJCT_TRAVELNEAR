@@ -76,7 +76,7 @@ def avtorization():  # авторизация ну тут всё понятно 
 
 @app.route('/open_map')
 def open_map():
-    map = folium.Map(position='relative', left='0%', width='100%', height='100%', align='right',
+    map = folium.Map(position='relative', left='35%', width='100%', height='100%', align='right',
                      location=[55.689179, 37.772682], zoom_start=12)
     folium.PolyLine(sp,
                     color='gray',

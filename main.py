@@ -3,7 +3,7 @@ import folium
 from flask import Flask, url_for, render_template, json, request
 from htmlmerger import HtmlMerger
 import codecs
-import dash
+import  dash
 
 #
 sp = [[55.689179, 37.772682],

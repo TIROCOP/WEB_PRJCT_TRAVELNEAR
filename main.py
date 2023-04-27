@@ -5,7 +5,6 @@ from htmlmerger import HtmlMerger
 import codecs
 import  dash
 
-#
 sp = [[55.689179, 37.772682],
       [55.690211, 37.784942],
       [55.687925, 37.801329],

@@ -1,6 +1,5 @@
 import folium
 from branca.element import MacroElement
-
 from flask import Flask, url_for, render_template, json, request
 from htmlmerger import HtmlMerger
 import codecs
@@ -98,7 +97,7 @@ d = []
 
 @app.route('/make_map/<kords>')
 def make_map(kords):
-    map1 = folium.Map(location=[55.7522, 37.6156], zoom_start=12)
+    map1 = folium.Map(location=[55.7522, 37.6156], left='30%', zoom_start=12)
     pop = LatLngPopup()
     map1.add_child(pop)
     pop_lis = [float(i) for i in kords.split(',')]
@@ -114,6 +113,17 @@ def make_map(kords):
                         color='gray',
                         weight=5,
                         opacity=0.8).add_to(map1)
+    map1.get_root().html.add_child(folium.Element('''
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" style="height: 100px " placeholder="Дмитрий Гордон">
+        <label for="floatingInput">Название</label>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px width:30%"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    <button class="button button1" style="!important">SAVE.</button>
+    '''))
     map1.save('templates/расходники/make_map.html')
 
     return render_template('расходники/make_map.html')

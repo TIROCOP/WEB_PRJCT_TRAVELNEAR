@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_939fa5224da3d56239a3d2d44984318f {
+                #map_0bd2455c639f8dee39872980b0cffdea {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,73 +39,75 @@
 <body>
     
     <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
-    <div class="panel">
+<div class="panel">
 
-        <div class="header" style="background-image: url(./assets/gordon.png)">
-            <div class="title">Ул. Гордона-Яйца, 4</div>
-        </div>
-
-        <div class="content">
-            <div class="description">Здесь должно быть очень подробное описание выбранного на карте места, а так-же
-                всего что связано с ослепительной лысой башкой и сексуальной улыбкой Дмитрия Гордона.
-            </div>
-
-            <div class="param" id="length">
-                <div class="name">Дистанция</div>
-                <div class="value">16 км</div>
-            </div>
-
-            <div class="param" id="time">
-                <div class="name">Длительность</div>
-                <div class="value">~ 1 час</div>
-            </div>
-        </div>
-
-        <div class="reviews">
-            <div class="title">Отзывы</div>
-
-            <div class="comment">
-                <div class="author">
-                    <img class="avatar" src="./assets/avatar.webp">
-                    <div class="username">Манки</div>
-                </div>
-                <div class="text">Мужики там нету Гордона это обман не ведитесь!!!</div>
-            </div>
-
-            <div class="comment">
-                <div class="author">
-                    <img class="avatar" src="./assets/avatar.webp">
-                    <div class="username">Монки1337</div>
-                </div>
-                <div class="text">* shocked monke noises *</div>
-            </div>
-
-            <div class="comment">
-                <div class="author">
-                    <img class="avatar" src="./assets/avatar.webp">
-                    <div class="username">Gordon Fan</div>
-                </div>
-                <div class="text">После 5 минут моего пребывания на этой лысой улице, мои волосы начали выпадать. Теперь
-                    я лысый и ни о чём не жалею! Всем советую!
-                </div>
-            </div>
-        </div>
-
-        <div class="review-input">
-            <input type="text" placeholder="Оставьте отзыв" maxlength="180">
-        </div>
-
+    <div class="header" style="background-image: url(./assets/gordon.png)">
+        <div class="title">Ул. Гордона-Яйца, 4</div>
     </div>
+
+    <div class="content">
+        <div class="description">Здесь должно быть очень подробное описание выбранного на карте места, а так-же
+            всего что связано с ослепительной лысой башкой и сексуальной улыбкой Дмитрия Гордона.
+        </div>
+
+        <div class="param" id="length">
+            <div class="name">Дистанция</div>
+            <div class="value">16 км</div>
+        </div>
+
+        <div class="param" id="time">
+            <div class="name">Длительность</div>
+            <div class="value">~ 1 час</div>
+        </div>
+    </div>
+
+    <div class="reviews">
+        <div class="title">Отзывы</div>
+
+        <div class="comment">
+            <div class="author">
+                <img class="avatar" src="./assets/avatar.webp">
+                <div class="username">Манки</div>
+            </div>
+            <div class="text">Мужики там нету Гордона это обман не ведитесь!!!</div>
+        </div>
+
+        <div class="comment">
+            <div class="author">
+                <img class="avatar" src="./assets/avatar.webp">
+                <div class="username">Монки1337</div>
+            </div>
+            <div class="text">* shocked monke noises *</div>
+        </div>
+
+        <div class="comment">
+            <div class="author">
+                <img class="avatar" src="./assets/avatar.webp">
+                <div class="username">Gordon Fan</div>
+            </div>
+            <div class="text">После 5 минут моего пребывания на этой лысой улице, мои волосы начали выпадать. Теперь
+                я лысый и ни о чём не жалею! Всем советую!
+            </div>
+        </div>
+    </div>
+
+    <div class="review-input">
+        <input type="text" placeholder="Оставьте отзыв" maxlength="180">
+    </div>
+
+</div>
     
-            <div class="folium-map" id="map_939fa5224da3d56239a3d2d44984318f" ></div>
+            <div class="folium-map" id="map_0bd2455c639f8dee39872980b0cffdea" ></div>
         
 </body>
 <script>
     
     
-            var map_939fa5224da3d56239a3d2d44984318f = L.map(
-                "map_939fa5224da3d56239a3d2d44984318f",
+            var map_0bd2455c639f8dee39872980b0cffdea = L.map(
+                "map_0bd2455c639f8dee39872980b0cffdea",
                 {
                     center: [55.689179, 37.772682],
                     crs: L.CRS.EPSG3857,
@@ -120,202 +122,202 @@
 
         
     
-            var tile_layer_c23bfbb718ecb045f4ae310108750638 = L.tileLayer(
+            var tile_layer_9d22e4eb9aeeae69541dab9bd4991ca4 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-            var poly_line_aeb048602a1bd0de07013da3ffac8ed9 = L.polyline(
+            var poly_line_306179348f4a81e5ab1f022dcc128ca1 = L.polyline(
                 [[55.689179, 37.772682], [55.690211, 37.784942], [55.687925, 37.801329], [55.687321, 37.804719], [55.68103, 37.817131], [55.680892, 37.823656], [55.681641, 37.82827], [55.670039, 37.827013], [55.662859, 37.809713]],
                 {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-            var marker_cdbf3799da9967296432f941ce2e85c0 = L.marker(
+            var marker_29d2dafbc75f58e93b549f3a8567216f = L.marker(
                 [55.689179, 37.772682],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_355a8e7bf587d891ff50ac96eb877f70 = L.popup({"maxWidth": "100%"});
+        var popup_f229631b286d506604ff4518a99b975f = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_c04a7bab37c070c7ecb083dc764fc892 = $(`<div id="html_c04a7bab37c070c7ecb083dc764fc892" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_355a8e7bf587d891ff50ac96eb877f70.setContent(html_c04a7bab37c070c7ecb083dc764fc892);
+                var html_fd7ec43c057f01629bc484c5912a9ba9 = $(`<div id="html_fd7ec43c057f01629bc484c5912a9ba9" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_f229631b286d506604ff4518a99b975f.setContent(html_fd7ec43c057f01629bc484c5912a9ba9);
             
         
 
-        marker_cdbf3799da9967296432f941ce2e85c0.bindPopup(popup_355a8e7bf587d891ff50ac96eb877f70)
+        marker_29d2dafbc75f58e93b549f3a8567216f.bindPopup(popup_f229631b286d506604ff4518a99b975f)
         ;
 
         
     
     
-            var marker_d8db6cb6fbb7194ae16c56ca43899ced = L.marker(
+            var marker_0435d1790551c53115763fa5a3b9dfa7 = L.marker(
                 [55.690211, 37.784942],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_36daf9737dc9142a97b7f26e0818b824 = L.popup({"maxWidth": "100%"});
+        var popup_409144a5b2dc0797fc80b2def69ef328 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_62059fdb60b750afa4f332d6c52cc25f = $(`<div id="html_62059fdb60b750afa4f332d6c52cc25f" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_36daf9737dc9142a97b7f26e0818b824.setContent(html_62059fdb60b750afa4f332d6c52cc25f);
+                var html_69ee2e423665b04e59743864dd1c064e = $(`<div id="html_69ee2e423665b04e59743864dd1c064e" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_409144a5b2dc0797fc80b2def69ef328.setContent(html_69ee2e423665b04e59743864dd1c064e);
             
         
 
-        marker_d8db6cb6fbb7194ae16c56ca43899ced.bindPopup(popup_36daf9737dc9142a97b7f26e0818b824)
+        marker_0435d1790551c53115763fa5a3b9dfa7.bindPopup(popup_409144a5b2dc0797fc80b2def69ef328)
         ;
 
         
     
     
-            var marker_e2a602decfd38a3b89845c9eec002a8d = L.marker(
+            var marker_879ae7255f1e289e5fdc173631b04c32 = L.marker(
                 [55.687925, 37.801329],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_81976a69d01379dc4bf8fdb290fb717b = L.popup({"maxWidth": "100%"});
+        var popup_c934985dc040587c3070dc6bfe52740b = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_c2677a36646b25503cfb662f5f405db3 = $(`<div id="html_c2677a36646b25503cfb662f5f405db3" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_81976a69d01379dc4bf8fdb290fb717b.setContent(html_c2677a36646b25503cfb662f5f405db3);
+                var html_5305aae8aec51ed3d0ddf06da8e3bf66 = $(`<div id="html_5305aae8aec51ed3d0ddf06da8e3bf66" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_c934985dc040587c3070dc6bfe52740b.setContent(html_5305aae8aec51ed3d0ddf06da8e3bf66);
             
         
 
-        marker_e2a602decfd38a3b89845c9eec002a8d.bindPopup(popup_81976a69d01379dc4bf8fdb290fb717b)
+        marker_879ae7255f1e289e5fdc173631b04c32.bindPopup(popup_c934985dc040587c3070dc6bfe52740b)
         ;
 
         
     
     
-            var marker_2be29380ad81609f2b430a52775f4a40 = L.marker(
+            var marker_3bd578024f6efcd0e2fb544f7f0f6b0b = L.marker(
                 [55.687321, 37.804719],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_149f20633f6aad996c6fed4fe425ef4b = L.popup({"maxWidth": "100%"});
+        var popup_ddc17ee1056741c22a7fac68b7c3463a = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_acff5967f17c6ba69304d3b9dfc3fbdb = $(`<div id="html_acff5967f17c6ba69304d3b9dfc3fbdb" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_149f20633f6aad996c6fed4fe425ef4b.setContent(html_acff5967f17c6ba69304d3b9dfc3fbdb);
+                var html_a48dabf5db5dc33a21de8a21044e8b0e = $(`<div id="html_a48dabf5db5dc33a21de8a21044e8b0e" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_ddc17ee1056741c22a7fac68b7c3463a.setContent(html_a48dabf5db5dc33a21de8a21044e8b0e);
             
         
 
-        marker_2be29380ad81609f2b430a52775f4a40.bindPopup(popup_149f20633f6aad996c6fed4fe425ef4b)
+        marker_3bd578024f6efcd0e2fb544f7f0f6b0b.bindPopup(popup_ddc17ee1056741c22a7fac68b7c3463a)
         ;
 
         
     
     
-            var marker_b697bff58ad8212de2fbc8be663a3caa = L.marker(
+            var marker_b79e02a1c37257af4d02cdcef18ad7ff = L.marker(
                 [55.68103, 37.817131],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_3cb98d2409d2bc20a0fbfc73e2408827 = L.popup({"maxWidth": "100%"});
+        var popup_5350bb9b259fcd659c05a6a535e504ef = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_e715cc366709e9b2a5f5c9d849ef5a91 = $(`<div id="html_e715cc366709e9b2a5f5c9d849ef5a91" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_3cb98d2409d2bc20a0fbfc73e2408827.setContent(html_e715cc366709e9b2a5f5c9d849ef5a91);
+                var html_4c27ba9eaeba25668ba617699085af5a = $(`<div id="html_4c27ba9eaeba25668ba617699085af5a" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_5350bb9b259fcd659c05a6a535e504ef.setContent(html_4c27ba9eaeba25668ba617699085af5a);
             
         
 
-        marker_b697bff58ad8212de2fbc8be663a3caa.bindPopup(popup_3cb98d2409d2bc20a0fbfc73e2408827)
+        marker_b79e02a1c37257af4d02cdcef18ad7ff.bindPopup(popup_5350bb9b259fcd659c05a6a535e504ef)
         ;
 
         
     
     
-            var marker_dfe52bf5fa4fa5a58ed1c5ee6788d1c6 = L.marker(
+            var marker_4b707fb484f78a5e75fb28ad19e421e2 = L.marker(
                 [55.680892, 37.823656],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_3427d3d36b0a84228bed4507944b20af = L.popup({"maxWidth": "100%"});
+        var popup_cbbf707d2bedfab7d674f245b4b60f26 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_ebe0d10e9b2d631779a9a834029c3a04 = $(`<div id="html_ebe0d10e9b2d631779a9a834029c3a04" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_3427d3d36b0a84228bed4507944b20af.setContent(html_ebe0d10e9b2d631779a9a834029c3a04);
+                var html_be9f5633e5e157779ebf117c10e99a8b = $(`<div id="html_be9f5633e5e157779ebf117c10e99a8b" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_cbbf707d2bedfab7d674f245b4b60f26.setContent(html_be9f5633e5e157779ebf117c10e99a8b);
             
         
 
-        marker_dfe52bf5fa4fa5a58ed1c5ee6788d1c6.bindPopup(popup_3427d3d36b0a84228bed4507944b20af)
+        marker_4b707fb484f78a5e75fb28ad19e421e2.bindPopup(popup_cbbf707d2bedfab7d674f245b4b60f26)
         ;
 
         
     
     
-            var marker_c1d8112ab92b48c4be64ab4c95605706 = L.marker(
+            var marker_5e7cd190aa7a7bcb020e343a08d03487 = L.marker(
                 [55.681641, 37.82827],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_7fcf616ff6b9299e7d3049fe2c7de596 = L.popup({"maxWidth": "100%"});
+        var popup_0baa10a296acfda5e4ce133ba08b5f58 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_01cbf018b1ddcafbaeda893b96a524b1 = $(`<div id="html_01cbf018b1ddcafbaeda893b96a524b1" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_7fcf616ff6b9299e7d3049fe2c7de596.setContent(html_01cbf018b1ddcafbaeda893b96a524b1);
+                var html_bc24fbf9d88a5216c1233dd6a89d2b00 = $(`<div id="html_bc24fbf9d88a5216c1233dd6a89d2b00" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_0baa10a296acfda5e4ce133ba08b5f58.setContent(html_bc24fbf9d88a5216c1233dd6a89d2b00);
             
         
 
-        marker_c1d8112ab92b48c4be64ab4c95605706.bindPopup(popup_7fcf616ff6b9299e7d3049fe2c7de596)
+        marker_5e7cd190aa7a7bcb020e343a08d03487.bindPopup(popup_0baa10a296acfda5e4ce133ba08b5f58)
         ;
 
         
     
     
-            var marker_534acb7195456eafafb4f895c04f3846 = L.marker(
+            var marker_42342652f24869b991cb783f0debac69 = L.marker(
                 [55.670039, 37.827013],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_49f95c118577a6ad4f27d536916df212 = L.popup({"maxWidth": "100%"});
+        var popup_b7a17f49561ec8221d30470f9f98aee8 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_f6512720abdb8375639d6da4eb9859b8 = $(`<div id="html_f6512720abdb8375639d6da4eb9859b8" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_49f95c118577a6ad4f27d536916df212.setContent(html_f6512720abdb8375639d6da4eb9859b8);
+                var html_a87a927d97d0d197593686894c0e412a = $(`<div id="html_a87a927d97d0d197593686894c0e412a" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_b7a17f49561ec8221d30470f9f98aee8.setContent(html_a87a927d97d0d197593686894c0e412a);
             
         
 
-        marker_534acb7195456eafafb4f895c04f3846.bindPopup(popup_49f95c118577a6ad4f27d536916df212)
+        marker_42342652f24869b991cb783f0debac69.bindPopup(popup_b7a17f49561ec8221d30470f9f98aee8)
         ;
 
         
     
     
-            var marker_d0f2d6ed7d39e2b9c613da554549dcb9 = L.marker(
+            var marker_eb8fc731b584f8b68a32975b59393a79 = L.marker(
                 [55.662859, 37.809713],
                 {}
-            ).addTo(map_939fa5224da3d56239a3d2d44984318f);
+            ).addTo(map_0bd2455c639f8dee39872980b0cffdea);
         
     
-        var popup_b0af0cc873381f740c3fae74e1d77c09 = L.popup({"maxWidth": "100%"});
+        var popup_694a5cd05b8b3162487d5561428d3895 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_6a893710b4b95ccc06307e13ed40eadf = $(`<div id="html_6a893710b4b95ccc06307e13ed40eadf" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
-                popup_b0af0cc873381f740c3fae74e1d77c09.setContent(html_6a893710b4b95ccc06307e13ed40eadf);
+                var html_20e0d741692842ee07aee26116892d7d = $(`<div id="html_20e0d741692842ee07aee26116892d7d" style="width: 100.0%; height: 100.0%;"><i>0_0</i></div>`)[0];
+                popup_694a5cd05b8b3162487d5561428d3895.setContent(html_20e0d741692842ee07aee26116892d7d);
             
         
 
-        marker_d0f2d6ed7d39e2b9c613da554549dcb9.bindPopup(popup_b0af0cc873381f740c3fae74e1d77c09)
+        marker_eb8fc731b584f8b68a32975b59393a79.bindPopup(popup_694a5cd05b8b3162487d5561428d3895)
         ;
 
         

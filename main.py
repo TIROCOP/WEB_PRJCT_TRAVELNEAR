@@ -38,11 +38,6 @@ def find():  # поиск пути по критериям
     return render_template('finder.html')
 
 
-@app.route('/make')
-def make():  # создай свой
-    return render_template('registr.html')
-
-
 @app.route('/get-cl', methods=['GET', 'POST'])
 def avtorization():  # авторизация ну тут всё понятно не обязательно
     email = request.input_stream['email']

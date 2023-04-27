@@ -33,7 +33,6 @@ class LatLngPopup(MacroElement):
         self._name = 'LatLngPopup'
 
 
-#
 sp = [[55.689179, 37.772682],
       [55.690211, 37.784942],
       [55.687925, 37.801329],

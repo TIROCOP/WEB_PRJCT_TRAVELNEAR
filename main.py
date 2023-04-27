@@ -1,7 +1,6 @@
 import folium
 from branca.element import MacroElement
 from flask import Flask, url_for, render_template, json, request
-from htmlmerger import HtmlMerger
 import codecs
 import dash
 from jinja2 import Template

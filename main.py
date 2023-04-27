@@ -76,6 +76,11 @@ def make_map():
     return render_template('расходники/make_map.html')
 
 
+@app.route('/make')
+def make():
+    return render_template('registr.html')
+
+
 '''from flask import Flask, render_template, request
 
 #
@@ -103,11 +108,6 @@ def foo():
 @app.route('/')
 def main():
     return render_template('base.html', Title='Гость')
-
-
-@app.route('/make')
-def make():
-    return render_template('base1.html')
 
 
 if __name__ == '__main__':

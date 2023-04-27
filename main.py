@@ -1,9 +1,38 @@
 import folium
+from branca.element import MacroElement
 
 from flask import Flask, url_for, render_template, json, request
 from htmlmerger import HtmlMerger
 import codecs
 import dash
+from jinja2 import Template
+
+
+class LatLngPopup(MacroElement):
+    """
+    When one clicks on a Map that contains a LatLngPopup,
+    a popup is shown that displays the latitude and longitude of the pointer.
+
+    """
+    _template = Template(u"""
+            {% macro script(this, kwargs) %}
+                var {{this.get_name()}} = L.popup();
+                function latLngPop(e) {
+                data = e.latlng.lat.toFixed(4) + "," + e.latlng.lng.toFixed(4);
+                    {{this.get_name()}}
+                        .setLatLng(e.latlng)
+                        .setContent( "<br /><a href="+data+"> click </a>")
+                        .openOn({{this._parent.get_name()}})
+                    }
+                {{this._parent.get_name()}}.on('click', latLngPop);
+
+            {% endmacro %}
+            """)  # noqa
+
+    def __init__(self):
+        super(LatLngPopup, self).__init__()
+        self._name = 'LatLngPopup'
+
 
 #
 sp = [[55.689179, 37.772682],
@@ -64,54 +93,31 @@ def open_map():
     return render_template('map.html')
 
 
-@app.route('/make_map')
-def make_map():
+d = []
+
+
+@app.route('/make_map/<kords>')
+def make_map(kords):
     map1 = folium.Map(location=[55.7522, 37.6156], zoom_start=12)
-    pop = folium.ClickForMarker()
-    idx = json.loads(dash.callback_context.triggered[0]['prop_id'].split(".")[0])["id"]
-    location = locations[idx]
+    pop = LatLngPopup()
     map1.add_child(pop)
+    pop_lis = [float(i) for i in kords.split(',')]
+    d.append(pop_lis)
+    print(d)
+    for k in d:
+        print(tuple(k))
+        folium.Marker(
+            tuple(k), popup=f"<i>0_0</i>"
+        ).add_to(map1)
+    if len(d) > 1:
+        folium.PolyLine(d,
+                        color='gray',
+                        weight=5,
+                        opacity=0.8).add_to(map1)
     map1.save('templates/расходники/make_map.html')
 
     return render_template('расходники/make_map.html')
 
-
-'''from flask import Flask, render_template, request
-
-#
-sp = [[55.689179, 37.772682],
-      [55.690211, 37.784942],
-      [55.687925, 37.801329],
-      [55.687321, 37.804719],
-      [55.681030, 37.817131],
-      [55.680892, 37.823656],
-      [55.681641, 37.828270],
-      [55.670039, 37.827013],
-      [55.662859, 37.809713]]
-
-lit = []
-#
-app = Flask(__name__)
-
-
-@app.route('/get-cl', methods=['GET', 'POST'])
-def foo():
-    email = request.input_stream['email']
-    print(email)
-
-
-@app.route('/')
-def main():
-    return render_template('base.html', Title='Гость')
-
-
-@app.route('/make')
-def make():
-    return render_template('base1.html')
-
-
-if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.2')'''
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.2')
